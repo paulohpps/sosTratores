@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogoIcon from './icons/LogoIcon';
-import { WHATSAPP_NUMBER } from '../constants';
+import { WHATSAPP_NUMBER } from '../../constants';
 
 const Footer: React.FC = () => {
   return (

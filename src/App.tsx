@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -11,7 +11,7 @@ import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="bg-brand-dark min-h-screen text-gray-200 font-sans">
         <Header />
         <main className="pt-20">
@@ -25,7 +25,7 @@ const App: React.FC = () => {
         <Footer />
         <FloatingWhatsAppButton />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

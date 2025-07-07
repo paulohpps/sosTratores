@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ProductCard from '../components/ProductCard';
-import { PRODUCTS } from '../constants';
+import { PRODUCTS } from '../../constants';
 
 const ProductsPage: React.FC = () => {
   return (

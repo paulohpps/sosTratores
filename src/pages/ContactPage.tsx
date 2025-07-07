@@ -1,6 +1,6 @@
 import React from 'react';
 import WhatsAppButton from '../components/WhatsAppButton';
-import { WHATSAPP_NUMBER } from '../constants';
+import { WHATSAPP_NUMBER } from '../../constants';
 
 const ContactPage: React.FC = () => {
   return (

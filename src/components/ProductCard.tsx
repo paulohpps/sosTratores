@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Product } from '../types';
-import { WHATSAPP_MESSAGE_BASE } from '../constants';
+import { Product } from '../../types';
+import { WHATSAPP_MESSAGE_BASE } from '../../constants';
 import WhatsAppButton from './WhatsAppButton';
 
 interface ProductCardProps {

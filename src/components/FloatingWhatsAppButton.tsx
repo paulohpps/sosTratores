@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { WHATSAPP_MESSAGE_BASE } from '../constants';
+import { WHATSAPP_MESSAGE_BASE } from '../../constants';
 import WhatsAppIcon from './icons/WhatsAppIcon';
 
 const FloatingWhatsAppButton: React.FC = () => {
