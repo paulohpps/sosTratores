@@ -1,12 +1,12 @@
 # Etapa de build
-FROM node:18-alpine as build
+FROM node:20-alpine as build
 WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build
 
 # Etapa de produção com "serve"
-FROM node:18-alpine
+FROM node:20-alpine
 WORKDIR /app
 RUN npm install -g serve
 COPY --from=build /app/dist ./dist
