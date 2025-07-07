@@ -3,7 +3,7 @@ FROM node:20-alpine as build
 WORKDIR /app
 COPY . .
 RUN npm install
-RUN npm run build
+RUN npx vite build
 
 EXPOSE 3000
 CMD ["serve", "-s", "dist", "-l", "3000"]
