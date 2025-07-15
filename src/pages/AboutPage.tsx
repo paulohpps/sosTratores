@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
           {/* A imagem placeholder foi mantida conforme o código original. */}
-          <img src="/imgs/AboutImg.jpg" alt="Oficina de peças" className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 lg:w-[48rem] md:-ml-4 lg:-ml-0" />
+          <img src="/imgs/AboutImg.jpeg" alt="Oficina de peças" className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 lg:w-[48rem] md:-ml-4 lg:-ml-0" />
         </div>
       </div>
     </div>
