@@ -25,9 +25,10 @@ const HomePage: React.FC = () => {
         {/* Camada da Imagem (com as duas versões) */}
         {/* Imagem para Desktop: visível em telas 'lg' (large) ou maiores */}
         <div 
-          className="absolute inset-0 hidden lg:block bg-cover bg-center"
+          className="absolute inset-0 hidden lg:block bg-cover bg-bottom bg-no-repeat"
           style={{ backgroundImage: "url('/imgs/background.png')" }}
         ></div>
+
         {/* Imagem para Celular: visível em telas menores que 'lg' */}
         <div 
           className="absolute inset-0 lg:hidden bg-cover bg-center"
