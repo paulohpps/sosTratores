@@ -35,4 +35,30 @@ export const PRODUCTS: Product[] = [
     name: "Bicos injetor 4hk1 ISUZU",
     imageUrl: "/imgs/Produtos/Bicos injetor 4hk1 ISUZU.jpg",
   },
+  {
+    id: 7,
+    name: "Painel ar-condicionado js130/160/200/235",
+    imageUrl: "/imgs/Produtos/Painel ar-condicionado js13016020023.jpeg",
+  },
+    {
+    id: 6,
+    name: "Motor de partida 4hk1",
+    imageUrl: "/imgs/Produtos/Motor de partida 4hk1.jpeg",
+  },
+{
+    id: 6,
+    name: "Motor de tração mini escavadeira todos modelos",
+    imageUrl: "/imgs/Produtos/Motor de tração mini escavadeira todos modelos.jpeg",
+  },
+    {
+    id: 6,
+    name: "Redutor de giro Js200",
+    imageUrl: "/imgs/Produtos/Redutor de giro Js200.jpeg",
+  },
+    {
+    id: 6,
+    name: "Motor parcial ISUZU 4hk1",
+    imageUrl: "/imgs/Produtos/Motor parcial ISUZU 4hk1.jpeg",
+  },
+
 ];

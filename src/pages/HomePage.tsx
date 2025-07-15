@@ -15,24 +15,32 @@ const brands = [
 ];
 
 const HomePage: React.FC = () => {
-  const featuredProducts = PRODUCTS.slice(0, 3);
+  const featuredProducts = PRODUCTS.slice(0, 6);
 
   return (
     <div className="animate-fade-in">
 
-      {/* --- INÍCIO DO CONTÊINER PAI COM A IMAGEM DE FUNDO --- */}
-      {/* Este 'div' agora envolve as três seções: Hero, Marcas e Produtos. */}
-      <div 
-        className="relative bg-cover bg-center"
-        style={{ backgroundImage: "url('/imgs/backgroud.jpg')" }}
-      >
-        {/* O overlay escuro cobre todo o contêiner pai */}
+      {/* --- INÍCIO DO CONTÊINER COM AS IMAGENS DE FUNDO RESPONSIVAS --- */}
+      <div className="relative">
+        {/* Camada da Imagem (com as duas versões) */}
+        {/* Imagem para Desktop: visível em telas 'lg' (large) ou maiores */}
+        <div 
+          className="absolute inset-0 hidden lg:block bg-cover bg-center"
+          style={{ backgroundImage: "url('/imgs/background.png')" }}
+        ></div>
+        {/* Imagem para Celular: visível em telas menores que 'lg' */}
+        <div 
+          className="absolute inset-0 lg:hidden bg-cover bg-center"
+          style={{ backgroundImage: "url('/imgs/background-mobile.png')" }}
+        ></div>
+
+        {/* Camada do Overlay Escuro (aplica-se sobre a imagem que estiver visível) */}
         <div className="absolute inset-0 bg-brand-dark/80"></div>
 
-        {/* Este 'div' com 'relative' garante que todo o conteúdo fique acima do overlay */}
+        {/* Camada do Conteúdo (fica acima de tudo) */}
         <div className="relative">
 
-          {/* --- SEÇÃO HERO (sem fundo próprio) --- */}
+          {/* --- SEÇÃO HERO (com padding para não ficar atrás do header) --- */}
           <section className="isolate px-6 pt-24 pb-12 sm:pt-32 sm:pb-16 lg:px-8">
             <div 
               className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" 
@@ -60,61 +68,56 @@ const HomePage: React.FC = () => {
             </div>
           </section>
 
-          {/* --- SEÇÃO DE MARCAS (sem fundo próprio) --- */}
-          <section className="py-12 sm:py-16">
+          {/* --- SEÇÃO DE MARCAS (ainda dentro do container da imagem de fundo) --- */}
+          <section className="py-12 sm:py-16 pb-24 sm:pb-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <h2 className="text-center text-3xl font-bold leading-8 text-white">
                 Trabalhamos com as Principais Marcas
               </h2>
-              <div className="mx-auto mt-10 grid grid-cols-2 items-center gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-7">
+              <div className="mx-auto mt-10 grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-7">
                 {brands.map((brand) => (
                   <div
                     key={brand.name}
-                    className="col-span-1 flex items-center justify-center bg-white rounded-md aspect-square p-3 transition-transform duration-300 hover:scale-105"
+                    className="col-span-1 flex h-full items-center justify-center rounded-md border border-white/30 p-4 text-center transition-all duration-300 hover:scale-105 hover:bg-white/10"
                   >
-                    <img
-                      className="max-h-16 w-full object-contain"
-                      src={brand.logoUrl}
-                      alt={brand.name}
-                    />
+                    <span className="font-semibold text-white text-lg">
+                      {brand.name}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
           </section>
 
-          {/* --- SEÇÃO DE PRODUTOS EM DESTAQUE (agora sem fundo próprio e dentro do contêiner) --- */}
-          <section className="py-12 sm:py-16 pb-24 sm:pb-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Produtos em Destaque
-                </h2>
-                <p className="mt-2 text-lg leading-8 text-gray-400">
-                  Confira alguns dos nossos itens mais procurados.
-                </p>
-              </div>
-              <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                {featuredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-              <div className="text-center mt-16">
-                <Link to="/produtos"
-                  className="inline-block bg-brand-yellow text-brand-dark font-bold py-3 px-8 rounded-lg hover:bg-amber-400 transition-colors duration-300">
-                  Ver Todos os Produtos
-                </Link>
-              </div>
-            </div>
-          </section>
+        </div>
+      </div> {/* --- FIM DO CONTÊINER COM A IMAGEM DE FUNDO --- */}
 
-        </div> {/* Fim do div.relative que agrupa o conteúdo */}
-      </div> {/* --- FIM DO CONTÊINER PAI COM A IMAGEM DE FUNDO --- */}
 
-      {/* 
-        Qualquer outra seção que você adicionar aqui abaixo terá um fundo separado,
-        pois está fora do contêiner da imagem.
-      */}
+      {/* --- SEÇÃO DE PRODUTOS EM DESTAQUE (AGORA SEPARADA E COM FUNDO PRÓPRIO) --- */}
+      <section className="bg-brand-dark py-12 sm:py-16 pb-24 sm:pb-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Produtos em Destaque
+            </h2>
+            <p className="mt-2 text-lg leading-8 text-gray-400">
+              Confira alguns dos nossos itens mais procurados.
+            </p>
+          </div>
+          <div className="mx-auto mt-16 grid max-w-none grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+          <div className="text-center mt-16">
+            <Link to="/produtos"
+              className="inline-block bg-brand-yellow text-brand-dark font-bold py-3 px-8 rounded-lg hover:bg-amber-400 transition-colors duration-300">
+              Ver Todos os Produtos
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

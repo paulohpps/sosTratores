@@ -20,7 +20,6 @@ const Header: React.FC = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <LogoIcon className="h-8 w-8 text-brand-yellow" />
-          {/* --- LINHA ALTERADA --- */}
           <span className="hidden md:inline self-center text-2xl font-semibold whitespace-nowrap text-white">
             SOS Peças para Tratores
           </span>

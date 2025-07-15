@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogoIcon from './icons/LogoIcon';
-import { WHATSAPP_NUMBER } from '../../constants';
 
 const Footer: React.FC = () => {
   return (
@@ -45,35 +43,51 @@ const Footer: React.FC = () => {
               <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link to="/contato" className="hover:underline">
-                    Contato
+                    Página de Contato
                   </Link>
-                </li>
-                <li>
-                  <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    WhatsApp
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-white">
-                Contato
-              </h2>
-              <ul className="text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href={`tel:+${WHATSAPP_NUMBER}`} className="hover:underline">
-                    (11) 95148-8776
-                  </a>
                 </li>
                 <li>
                   <a href="mailto:contato@sospecas.com.br" className="hover:underline">
                     contato@sospecas.com.br
                   </a>
+                </li>
+              </ul>
+            </div>
+            {/* --- SEÇÃO DE VENDAS MODIFICADA PARA WHATSAPP --- */}
+            <div>
+              <h2 className="mb-6 text-sm font-semibold uppercase text-white">
+                Vendas
+              </h2>
+              <ul className="text-gray-400 font-medium">
+                {/* Contato do Fernando */}
+                <li className="mb-4">
+                  <div className="flex flex-col">
+                    <span>Fernando (Consultor de Vendas)</span>
+                    <a 
+                      // O link agora aponta para o WhatsApp
+                      href="https://wa.me/5511957211127" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-emerald-400 hover:underline font-semibold"
+                    >
+                      (11) 95721-1127
+                    </a>
+                  </div>
+                </li>
+                {/* Contato do Willian */}
+                <li>
+                  <div className="flex flex-col">
+                    <span>Willian (Gerente de Vendas)</span>
+                    <a 
+                      // O link agora aponta para o WhatsApp
+                      href="https://wa.me/5511951488776" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-emerald-400 hover:underline font-semibold"
+                    >
+                      (11) 95148-8776
+                    </a>
+                  </div>
                 </li>
               </ul>
             </div>
