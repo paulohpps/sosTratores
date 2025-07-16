@@ -8,7 +8,7 @@ const AboutPage: React.FC = () => {
           {/* O título "POR QUE?" e o parágrafo foram atualizados com o texto da imagem. */}
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">POR QUE?</h2>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            A SOS surgiu a dois anos, de uma maneira orgânica devido a minha
+            A SOS surgiu em 19 de abril de 2022, de uma maneira orgânica devido a minha
             experiência de 20 anos no mercado de máquinas e peças. Nesse período,
             pude estar próximo aos clientes e entender a demanda de cada um de
             maneira particular. As máquinas funcionam através de conjuntos
